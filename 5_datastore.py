@@ -47,3 +47,15 @@ datastore = { "medical":[
 
       ]
 }
+
+import csv
+
+retail_space = open("retail_space.csv", "w")
+retail_space_csv = csv.writer(retail_space)
+
+retail_space_csv.writerow(datastore["medical"][0])
+
+for i in range(len(datastore["medical"])):
+    retail_space_csv.writerow(datastore["medical"][i].values())
+
+retail_space.close()
